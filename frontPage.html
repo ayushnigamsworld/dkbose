@@ -1,0 +1,47 @@
+<html>
+
+<head>
+	
+	<script language="JavaScript">
+		
+		function isNullOrEmpty(data){
+			
+			if (data==null || data==""){
+				return true;
+			}
+			
+			return false;
+		
+		}
+	
+		function getInputParams(){
+			console.log("called!");
+		
+			var source = document.getElementById("source").value;
+			var destination = document.getElementById("destination").value;
+			var startTime = document.getElementById("startTime").value;
+			var endTime = document.getElementById("endTime").value;
+			var interval = document.getElementById("interval").value;
+		
+			if(isNullOrEmpty(source)||isNullOrEmpty(destination)||isNullOrEmpty(startTime)||isNullOrEmpty(endTime)||isNullOrEmpty(interval)){
+				alert("Invalid Data!");
+				return;
+			}
+			
+			console.log(source+"\n"+destination+"\n"+startTime+"\n"+endTime+"\n"+interval);
+		
+		}
+	</script>
+	
+</head>
+
+<body>
+	Source : <input type="text" id="source" value=""/><br>
+	Destination : <input type="text" id="destination" value=""/><br>
+	Start Time : <input type="time" id="startTime" value=""/><br>
+	End Time : <input type="time" id="endTime" value=""/><br>
+	Interval : <input type="time" id="interval" value=""/><br>
+	<button onclick="getInputParams()">SET</button><br>
+</body>
+	
+</html>
